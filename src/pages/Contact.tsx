@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,8 +7,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 
 export default function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32 max-w-6xl">
+    <div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -95,8 +98,15 @@ export default function Contact() {
           className="bg-white p-8 rounded-3xl shadow-sm border"
         >
           <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-          <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); alert('Message sent!'); }}>
-            <div className="grid sm:grid-cols-2 gap-6">
+          {isSubmitted ? (
+            <div className="bg-green-50 text-green-800 p-6 rounded-xl border border-green-200 text-center">
+              <h3 className="text-xl font-semibold mb-2">Thank you!</h3>
+              <p>Your message has been sent successfully. We'll get back to you soon.</p>
+              <Button className="mt-6" onClick={() => setIsSubmitted(false)}>Send Another Message</Button>
+            </div>
+          ) : (
+            <form className="space-y-6" onSubmit={(e) => { e.preventDefault(); setIsSubmitted(true); }}>
+              <div className="grid sm:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First Name</Label>
                 <Input id="firstName" placeholder="John" required />
@@ -131,6 +141,7 @@ export default function Contact() {
               Send Message
             </Button>
           </form>
+          )}
         </motion.div>
       </div>
     </div>

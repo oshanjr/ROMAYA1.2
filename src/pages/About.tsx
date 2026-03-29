@@ -3,7 +3,7 @@ import { Store, Users, Leaf, Award } from 'lucide-react';
 
 export default function About() {
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32 max-w-6xl">
+    <div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
       {/* Hero Section */}
       <div className="text-center max-w-3xl mx-auto mb-20">
         <motion.h1 

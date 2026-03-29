@@ -12,7 +12,7 @@ const FADE_UP_ANIMATION_VARIANTS = {
 
 function Hero() {
   return (
-    <section className="relative pt-24 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+    <section className="relative py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div 
           initial="hidden"
@@ -149,8 +149,8 @@ function ProductGrid() {
               className="group"
             >
               <Link to={`/product/${product.id}`}>
-                <Card className="border-none shadow-none bg-transparent overflow-hidden h-full">
-                  <div className="relative aspect-[4/5] overflow-hidden rounded-xl mb-4 bg-muted">
+                <Card className="border border-border/50 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-border transition-colors">
+                  <div className="relative aspect-square overflow-hidden bg-muted">
                     {product.isNew && (
                       <Badge className="absolute top-3 left-3 z-10 bg-primary">New</Badge>
                     )}
@@ -167,7 +167,7 @@ function ProductGrid() {
                       </Button>
                     </div>
                   </div>
-                  <CardContent className="p-0">
+                  <CardContent className="p-4 flex-1 flex flex-col">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{product.category}</span>
                       <div className="flex items-center gap-1 text-yellow-500">
@@ -175,8 +175,8 @@ function ProductGrid() {
                         <span className="text-xs font-medium text-foreground">{product.rating}</span>
                       </div>
                     </div>
-                    <h3 className="font-semibold text-base mb-1 group-hover:text-primary transition-colors">{product.name}</h3>
-                    <p className="font-medium">{product.price}</p>
+                    <h3 className="font-semibold text-base mb-1 group-hover:text-primary transition-colors line-clamp-1">{product.name}</h3>
+                    <p className="font-medium mt-auto pt-2">{product.price}</p>
                   </CardContent>
                 </Card>
               </Link>

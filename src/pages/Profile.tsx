@@ -20,7 +20,7 @@ export default function Profile() {
   ];
 
   return (
-    <div className="container mx-auto px-4 pt-24 pb-12">
+    <div className="container mx-auto px-4 py-12">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">My Account</h1>
         <p className="text-muted-foreground">Manage your profile, orders, and preferences.</p>
@@ -48,6 +48,10 @@ export default function Profile() {
               );
             })}
             <Separator className="my-4" />
+            <Button variant="ghost" className="justify-start text-primary hover:text-primary hover:bg-primary/10" render={<Link to="/admin" />}>
+              <Settings className="mr-2 h-4 w-4" />
+              Admin Dashboard
+            </Button>
             <Button variant="ghost" className="justify-start text-destructive hover:text-destructive hover:bg-destructive/10" render={<Link to="/" />}>
               <LogOut className="mr-2 h-4 w-4" />
               Sign Out

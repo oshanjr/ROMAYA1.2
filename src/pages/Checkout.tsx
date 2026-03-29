@@ -41,7 +41,7 @@ export default function Checkout() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-24 md:py-32 max-w-5xl">
+    <div className="container mx-auto px-4 py-12 md:py-20 max-w-5xl">
       <div className="flex items-center justify-between mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Checkout</h1>
         <Button variant="ghost" render={<Link to="/cart" />} className="hidden sm:flex">
