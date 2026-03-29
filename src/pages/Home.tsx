@@ -14,7 +14,7 @@ function Hero() {
   return (
     <section className="relative py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div 
+        <motion.div
           initial="hidden"
           animate="show"
           variants={{
@@ -42,7 +42,7 @@ function Hero() {
         {/* Split Screen Hero Images */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-6 h-[500px] md:h-[600px]">
           <Link to="/category/fashion">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,7 +61,7 @@ function Hero() {
           </Link>
 
           <Link to="/category/home">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
@@ -96,7 +96,7 @@ function TrustBar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x">
           {features.map((feature, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -149,14 +149,14 @@ function ProductGrid() {
               className="group"
             >
               <Link to={`/product/${product.id}`}>
-                <Card className="border border-border/50 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-border transition-colors">
+                <Card className="border-1 border-red-300 ring-0 p-0 gap-0 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-red-600 transition-colors">
                   <div className="relative aspect-square overflow-hidden bg-muted">
                     {product.isNew && (
                       <Badge className="absolute top-3 left-3 z-10 bg-primary">New</Badge>
                     )}
-                    <img 
-                      src={product.image} 
-                      alt={product.name} 
+                    <img
+                      src={product.image}
+                      alt={product.name}
                       className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                       referrerPolicy="no-referrer"
                     />
@@ -198,7 +198,7 @@ function LocationMap() {
     <section className="py-20 bg-zinc-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -208,7 +208,7 @@ function LocationMap() {
             <p className="text-lg text-muted-foreground mb-8">
               Experience the new ROMAYA Home collection in person. Our flagship stores have been redesigned to bring you the ultimate lifestyle shopping experience.
             </p>
-            
+
             <div className="space-y-6">
               {[
                 { name: "Colombo Flagship Store", address: "123 Galle Road, Colombo 03", hours: "Mon-Sun: 9AM - 9PM" },
@@ -228,7 +228,7 @@ function LocationMap() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

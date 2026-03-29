@@ -134,7 +134,7 @@ export default function Category() {
                   className="group"
                 >
                   <Link to={`/product/${product.id}`}>
-                    <Card className="border border-border/50 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-border transition-colors">
+                <Card className="border-1 border-red-300 ring-0 p-0 gap-0 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-red-600 transition-colors">
                       <div className="relative aspect-square overflow-hidden bg-muted">
                         {product.isNew && (
                           <Badge className="absolute top-3 left-3 z-10 bg-primary">New</Badge>
