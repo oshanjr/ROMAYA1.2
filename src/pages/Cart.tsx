@@ -80,9 +80,9 @@ export default function Cart() {
               transition={{ delay: idx * 0.1 }}
             >
               <Card className="overflow-hidden">
-                <CardContent className="p-4 sm:p-6 flex flex-col sm:flex-row gap-6">
+                <CardContent className="p-4 sm:p-6 flex flex-row gap-4 sm:gap-6">
                   {/* Product Image */}
-                  <div className="w-full sm:w-32 aspect-square rounded-md overflow-hidden bg-muted shrink-0">
+                  <div className="w-24 sm:w-32 aspect-square rounded-md overflow-hidden bg-muted shrink-0">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -93,9 +93,9 @@ export default function Cart() {
 
                   {/* Product Details */}
                   <div className="flex-1 flex flex-col justify-between">
-                    <div className="flex justify-between items-start gap-4">
+                    <div className="flex justify-between items-start gap-2 sm:gap-4">
                       <div>
-                        <h3 className="font-semibold text-lg mb-1">
+                        <h3 className="font-semibold text-base sm:text-lg mb-1 line-clamp-2">
                           <Link to={`/product/${item.id}`} className="hover:text-primary transition-colors">
                             {item.name}
                           </Link>
@@ -105,10 +105,10 @@ export default function Cart() {
                           {item.size && <p>Size: {item.size}</p>}
                         </div>
                       </div>
-                      <p className="font-semibold text-lg">${item.price.toFixed(2)}</p>
+                      <p className="font-semibold text-base sm:text-lg shrink-0">${item.price.toFixed(2)}</p>
                     </div>
 
-                    <div className="flex items-center justify-between mt-6">
+                    <div className="flex items-center justify-between mt-4 sm:mt-6 gap-2 flex-wrap">
                       {/* Quantity Control */}
                       <div className="flex items-center border rounded-md">
                         <button
@@ -156,7 +156,7 @@ export default function Cart() {
             <Card className="bg-zinc-50 border-none shadow-sm">
               <CardContent className="p-6 sm:p-8">
                 <h2 className="text-xl font-bold mb-6">Order Summary</h2>
-                
+
                 <div className="space-y-4 text-sm mb-6">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Subtotal</span>
@@ -186,7 +186,7 @@ export default function Cart() {
                   <Button render={<Link to="/checkout" />} className="w-full rounded-full" size="lg">
                     Proceed to Checkout <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
-                  
+
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center">
                       <span className="w-full border-t" />

@@ -41,6 +41,35 @@ export function Navbar() {
         <div className="hidden md:flex items-center space-x-8">
           <NavigationMenu>
             <NavigationMenuList>
+              {/* DEMO PAGES (Remove later) */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-base font-medium bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent text-amber-500">Demo Pages</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid grid-cols-2 gap-4 p-6 w-[400px]">
+                    <div>
+                      <h4 className="font-semibold mb-3">Main</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li><Link to="/" className="hover:text-amber-500 transition-colors">Home</Link></li>
+                        <li><Link to="/category/all" className="hover:text-amber-500 transition-colors">Category</Link></li>
+                        <li><Link to="/product/1" className="hover:text-amber-500 transition-colors">Product Detail</Link></li>
+                        <li><Link to="/cart" className="hover:text-amber-500 transition-colors">Cart</Link></li>
+                        <li><Link to="/checkout" className="hover:text-amber-500 transition-colors">Checkout</Link></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-3">Other</h4>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li><Link to="/about" className="hover:text-amber-500 transition-colors">About</Link></li>
+                        <li><Link to="/contact" className="hover:text-amber-500 transition-colors">Contact</Link></li>
+                        <li><Link to="/signin" className="hover:text-amber-500 transition-colors">Sign In</Link></li>
+                        <li><Link to="/signup" className="hover:text-amber-500 transition-colors">Sign Up</Link></li>
+                        <li><Link to="/forgot-password" className="hover:text-amber-500 transition-colors">Forgot Password</Link></li>
+                        <li><Link to="/profile" className="hover:text-amber-500 transition-colors">Profile</Link></li>
+                      </ul>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="text-base font-medium bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent">Clothing</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -151,6 +180,22 @@ export function Navbar() {
             className="md:hidden bg-white border-t mt-3 overflow-hidden"
           >
             <div className="flex flex-col px-4 py-4 space-y-4">
+              {/* Demo Links (Mobile) */}
+              <div className="py-2 border-b">
+                <p className="text-sm font-semibold text-amber-500 mb-2 uppercase tracking-wider">Demo Pages (Remove Later)</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <Link to="/" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+                  <Link to="/about" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>About</Link>
+                  <Link to="/category/all" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Category</Link>
+                  <Link to="/contact" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+                  <Link to="/product/1" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Product</Link>
+                  <Link to="/signin" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Sign In</Link>
+                  <Link to="/cart" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Cart</Link>
+                  <Link to="/signup" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Sign Up</Link>
+                  <Link to="/checkout" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Checkout</Link>
+                  <Link to="/profile" className="text-sm text-muted-foreground hover:text-amber-500" onClick={() => setMobileMenuOpen(false)}>Profile</Link>
+                </div>
+              </div>
               <Link to="/category/clothing" className="text-lg font-medium py-2 border-b" onClick={() => setMobileMenuOpen(false)}>Clothing</Link>
               <Link to="/category/home" className="text-lg font-medium py-2 border-b text-primary" onClick={() => setMobileMenuOpen(false)}>Home & Living</Link>
               <Link to="/category/electronics" className="text-lg font-medium py-2 border-b" onClick={() => setMobileMenuOpen(false)}>Electronics</Link>

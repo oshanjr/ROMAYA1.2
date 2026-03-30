@@ -124,7 +124,7 @@ export default function Category() {
             </div>
 
             {/* Product Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
               {ALL_PRODUCTS.map((product, idx) => (
                 <motion.div
                   key={product.id}
@@ -134,14 +134,14 @@ export default function Category() {
                   className="group"
                 >
                   <Link to={`/product/${product.id}`}>
-                <Card className="border-1 border-red-300 ring-0 p-0 gap-0 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-red-600 transition-colors">
+                    <Card className="border-1 border-red-300 ring-0 p-0 gap-0 shadow-sm overflow-hidden h-full flex flex-col group-hover:border-red-600 transition-colors">
                       <div className="relative aspect-square overflow-hidden bg-muted">
                         {product.isNew && (
                           <Badge className="absolute top-3 left-3 z-10 bg-primary">New</Badge>
                         )}
-                        <img 
-                          src={product.image} 
-                          alt={product.name} 
+                        <img
+                          src={product.image}
+                          alt={product.name}
                           className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-105"
                           referrerPolicy="no-referrer"
                         />
@@ -151,7 +151,7 @@ export default function Category() {
                           </Button>
                         </div>
                       </div>
-                      <CardContent className="p-4 flex-1 flex flex-col">
+                      <CardContent className="p-3 sm:p-4 flex-1 flex flex-col">
                         <div className="flex items-center justify-between mb-1">
                           <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{product.category}</span>
                           <div className="flex items-center gap-1 text-yellow-500">
@@ -159,8 +159,8 @@ export default function Category() {
                             <span className="text-xs font-medium text-foreground">{product.rating}</span>
                           </div>
                         </div>
-                        <h3 className="font-semibold text-base mb-1 group-hover:text-primary transition-colors line-clamp-1">{product.name}</h3>
-                        <p className="font-medium mt-auto pt-2">{product.price}</p>
+                        <h3 className="font-semibold text-sm sm:text-base mb-1 group-hover:text-primary transition-colors line-clamp-1">{product.name}</h3>
+                        <p className="font-medium text-sm sm:text-base mt-auto pt-2">{product.price}</p>
                       </CardContent>
                     </Card>
                   </Link>

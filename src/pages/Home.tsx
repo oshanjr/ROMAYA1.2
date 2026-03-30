@@ -138,7 +138,7 @@ function ProductGrid() {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
           {PRODUCTS.map((product, idx) => (
             <motion.div
               key={product.id}
@@ -167,7 +167,7 @@ function ProductGrid() {
                       </Button>
                     </div>
                   </div>
-                  <CardContent className="p-4 flex-1 flex flex-col">
+                  <CardContent className="p-3 sm:p-4 flex-1 flex flex-col">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{product.category}</span>
                       <div className="flex items-center gap-1 text-yellow-500">
@@ -175,8 +175,8 @@ function ProductGrid() {
                         <span className="text-xs font-medium text-foreground">{product.rating}</span>
                       </div>
                     </div>
-                    <h3 className="font-semibold text-base mb-1 group-hover:text-primary transition-colors line-clamp-1">{product.name}</h3>
-                    <p className="font-medium mt-auto pt-2">{product.price}</p>
+                    <h3 className="font-semibold text-sm sm:text-base mb-1 group-hover:text-primary transition-colors line-clamp-1">{product.name}</h3>
+                    <p className="font-medium text-sm sm:text-base mt-auto pt-2">{product.price}</p>
                   </CardContent>
                 </Card>
               </Link>
